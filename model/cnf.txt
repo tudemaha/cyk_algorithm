@@ -1,0 +1,4 @@
+A -> a
+B -> a | A B
+A -> A AB | a
+Vp -> Verb
