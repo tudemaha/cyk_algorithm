@@ -1,4 +1,23 @@
-A -> a
-B -> a | A B
-A -> A AB | a
-Vp -> Verb
+S -> NP VP
+S -> X1 VP
+X1 -> Aux NP
+S -> book | incluce | prefer
+S -> Verb NP
+S -> VP PP
+NP -> I | he | she | me
+NP -> Houston | NWA
+NP -> Det Nominal
+Nominal -> book | flight | meal | money
+Nominal -> Nominal Noun
+Nominal -> Nominal PP
+VP -> book | include | prefer
+VP -> Verb NP
+VP -> VP PP
+PP -> Prep NP
+Det -> the | a | that | this
+Noun -> book | flight | meal | money
+Verb -> book | include | prefer
+Pronoun -> I | he | she | me
+ProperNoun -> Houston | NWA
+Aux -> does
+Prep -> from | to | on | near | through
