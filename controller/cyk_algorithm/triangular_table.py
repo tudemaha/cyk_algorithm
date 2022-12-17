@@ -29,7 +29,7 @@ def filling_botton(table, cnf, list_of_string):
 
 def filling_all(cnf, table, string, row = 1):
     if table[len(table) - 1][0] != set():
-        if 'S' in table[len(table) - 1][0]:
+        if 'X' in table[len(table) - 1][0]:
             st.write('Accepted')
         else:
             st.write('Not accept')
