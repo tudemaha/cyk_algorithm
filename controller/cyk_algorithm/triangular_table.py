@@ -30,9 +30,11 @@ def filling_botton(table, cnf, list_of_string):
 def filling_all(cnf, table, string, row = 1):
     if table[len(table) - 1][0] != set():
         if 'X' in table[len(table) - 1][0]:
-            st.write('Accepted')
+            st.success('Sentence accepted.')
+            st.balloons()
         else:
-            st.write('Not accept')
+            st.error('Sentence not accepted.')
+            st.snow()
 
         return
 

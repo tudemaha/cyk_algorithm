@@ -5,13 +5,22 @@ from controller.raw_conversion import raw_to_cfg
 from controller.cyk_algorithm.cyk_parse import parse
 
 def run_streamlit():
-    st.set_page_config(layout='wide')
+    title = 'Syntactic Parsing of Indonesian Sentences Using CYK Algorithm'
+
+    st.set_page_config(layout='wide', page_title=title, menu_items={
+        'About': f"""
+        ### {title}
+        Made with :heart: by Group 3 in Class A  
+        Language and Automata Theory Subject  
+        GitHub: https://github.com/tudemaha/cyk_algorithm
+        """
+    })
     
     raw_cfg = open_file('model/cnf.txt')
     cnf = raw_to_cfg(raw_cfg)
 
-    st.title('String Checker with CYK Algorithm')
-    # st.write("<h1 style='text-align:center; '>String Checker with CYK Algorithm</h1>", unsafe_allow_html=True)
+    # st.title(title)
+    st.write(f"<h1 style='text-align:center; '>{title}</h1>", unsafe_allow_html=True)
 
     col1, col2 = st.columns(2, gap='small')
 
@@ -20,9 +29,9 @@ def run_streamlit():
         st.write(raw_cfg)
 
     with col2:
-        string_input = st.text_input('Input String')
+        string_input = st.text_input('Input Sentence')
         button_click = st.button('Check', type='primary')
-        if button_click:
+        if button_click and string_input != '':
             st.write('<br><p>Filling Table:</p>', unsafe_allow_html=True)
             parse(cnf, string_input.split(' '))
 
