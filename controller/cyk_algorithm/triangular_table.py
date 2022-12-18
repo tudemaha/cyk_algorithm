@@ -37,7 +37,7 @@ def filling_botton(table, cnf, list_of_string):
             # for each element in rule's body
             for element in row[1]:
                 # if current word is equal with current element
-                if word in element:
+                if word.lower() in (x.lower() for x in element):
                     # add it to cell set
                     cell.add(row[0])
                     # break the 
