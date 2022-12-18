@@ -107,7 +107,7 @@ def iteration(cnf, table, input_string, row):
             result_list = make_combination(list_of_intersect)
             # print(result_list)
 
-            # combine the same combination in result before
+            # combine all the combination in result_list into a set
             combine_result = combine(result_list)
             # print(combine_result)
             
@@ -157,7 +157,7 @@ def make_combination(list_input):
     return combination
 
 
-# combine the same combination into 1 combination
+# combine all combination to a set
 def combine(raw_combination):
     # prepare the empty set
     result_set = set()
