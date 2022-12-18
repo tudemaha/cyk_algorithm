@@ -63,7 +63,7 @@ def iteration(cnf, table, input_string, row):
             # print(list_of_intersect)
 
             result_list = make_combination(list_of_intersect)
-            print(result_list)
+            # print(result_list)
 
             combine_result = combine(result_list)
             # print(combine_result)
@@ -111,7 +111,7 @@ def find_cnf(combine, cnf):
     for com in combine:
         for row in cnf:
             if com in row[1]:
-                print(row[0], com)
+                # print(row[0], com)
                 cnf_return.add(row[0])
     
     if cnf_return == set():

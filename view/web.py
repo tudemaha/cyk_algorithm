@@ -30,10 +30,15 @@ def run_streamlit():
 
     with col2:
         string_input = st.text_input('Input Sentence')
+        list_string = string_input.split(' ')
         button_click = st.button('Check', type='primary')
-        if button_click and string_input != '':
-            st.write('<br><p>Filling Table:</p>', unsafe_allow_html=True)
-            parse(cnf, string_input.split(' '))
+
+        if button_click:
+            if len(list_string) <= 1:
+                st.error("Sentence can't be null or a word.")
+            elif string_input != '':
+                st.write('<br><p>Filling Table:</p>', unsafe_allow_html=True)
+                parse(cnf, string_input.split(' '))
 
     
 
