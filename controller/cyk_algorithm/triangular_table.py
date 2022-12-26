@@ -1,6 +1,6 @@
 # import the necessary library and framework
 import streamlit as st
-from pandas import DataFrame
+from view.table import print_table
 
 # empty set symbol
 empty = '\u2205'
@@ -115,7 +115,7 @@ def iteration(cnf, table, input_string, row):
             table[row][column] = find_cnf(combine_result, cnf)
 
             # display the updated filling table
-            st.table(DataFrame(table, columns=input_string))
+            st.write(print_table(table, input_string), unsafe_allow_html=True)
 
             # increase the row if the next number of row < than total of all row, else back to row number 1
             row = (row + 1) if row + 1 < len(table) else 1
