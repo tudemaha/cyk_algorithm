@@ -106,13 +106,17 @@ def iteration(cnf, table, input_string, row):
             # make combination of the list_of_intersect and store the combination
             result_list = make_combination(list_of_intersect)
             # print(result_list)
+            # print()
 
             # combine all the combination in result_list into a set
             combine_result = combine(result_list)
             # print(combine_result)
+            # print()
             
             # find the right cnf rules for the current table's cell
             table[row][column] = find_cnf(combine_result, cnf)
+            # print(table[row][column])
+            # print("=====================================================================\n")
 
             # display the updated filling table
             st.write(print_table(table, input_string), unsafe_allow_html=True)
