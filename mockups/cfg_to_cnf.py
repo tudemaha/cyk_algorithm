@@ -67,7 +67,7 @@ def cfg_to_cnf():
                 ⇒ ayah sedang VP Ket <br>
                 ⇒ ayah sedang bekerja Ket <br>
                 ⇒ ayah sedang bekerja Prep NP <br>
-                ⇒ ayah sedang bekjerja di NP <br>
+                ⇒ ayah sedang bekerja di NP <br>
                 ⇒ ayah sedang bekerja di kebun
                 </p>
                 """, unsafe_allow_html=True)

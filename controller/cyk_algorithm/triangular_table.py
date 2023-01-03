@@ -102,17 +102,27 @@ def iteration(cnf, table, input_string, row):
                     # append the cell content into list_of_intersect
                     list_of_intersect.append(table[row][i])
 
+            st.write("=====================================================================\n")
             # print(list_of_intersect)
             # make combination of the list_of_intersect and store the combination
             result_list = make_combination(list_of_intersect)
-            # print(result_list)
+            string = ""
+            for i, lst in enumerate(result_list):
+                string += str(lst)
+                if i < len(result_list) - 1:
+                    string += ' U '
+
+            st.write(string)
+            st.write()
 
             # combine all the combination in result_list into a set
             combine_result = combine(result_list)
-            # print(combine_result)
+            st.write(combine_result)
+            st.write()
             
             # find the right cnf rules for the current table's cell
             table[row][column] = find_cnf(combine_result, cnf)
+            st.write(table[row][column])
 
             # display the updated filling table
             st.write(print_table(table, input_string), unsafe_allow_html=True)
